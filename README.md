@@ -7,7 +7,7 @@ Typical way to consume a SOAP web service in Mule is using Consume component in 
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:jpas="http://test.namspace.org/">
    <soapenv:Header/>
    <soapenv:Body>
-      <b><?xml version='1.0' encoding='UTF-8'?></b>
+      <?xml version='1.0' encoding='UTF-8'?>
       <jpas:request>...</japs:request>
    </soapenv:Body>
  </soap:Envelope>
