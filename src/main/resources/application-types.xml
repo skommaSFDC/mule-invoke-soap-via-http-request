@@ -2,7 +2,21 @@
 <types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
   <types:catalog>
     <types:type name="LatLonListZipCode-request" format="xml">
-      <types:example format="xml" element="{http://schemas.xmlsoap.org/soap/envelope/}Envelope" location="examples/LatLonListZipCode-sample.xml"/>
+      <types:example format="xml" element="{https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl}LatLonListZipCode" location="examples/LatLonListZipCode-sample.xml"/>
     </types:type>
   </types:catalog>
+  <types:enrichment select="#bed7e0ae-f4be-48a1-9ff0-98cd562b46ec">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="LatLonListZipCode-request"/>
+        </types:message>
+      </types:input-event>
+      <types:output-event>
+        <types:message>
+          <types:payload type="LatLonListZipCode-request"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
 </types:mule>

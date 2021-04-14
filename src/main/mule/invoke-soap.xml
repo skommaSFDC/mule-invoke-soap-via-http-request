@@ -28,11 +28,11 @@ ns env http://schemas.xmlsoap.org/soap/envelope/
 		<wsc:consume doc:name="Consume" doc:id="730995af-eb39-42f8-98b5-e244868b4665" config-ref="Web_Service_Consumer_Config" operation="LatLonListZipCode" />
 		<logger level="INFO" doc:name="Logger" doc:id="c2e6f626-33c3-4359-b60a-b178fe80d9dc" message="Response from Payload: #[payload]" />
 	</sub-flow>
-	<flow name="soap-invoke-subflowsFlow" doc:id="3f4379b6-ae85-4014-a29c-95ecbdff6466" >
+	<flow name="soap-invoke-via-http" doc:id="3f4379b6-ae85-4014-a29c-95ecbdff6466" >
 		<http:listener doc:name="/soap-via-http" doc:id="14ac5344-2e02-4699-a404-718bd8b4de15" config-ref="api-httpListenerConfig" path="/soap-via-http"/>
 		<flow-ref doc:name="soap-invoke-via-http-request-subflow" doc:id="48bfb338-38d1-4e2a-901e-ca81632b98b7" name="soap-invoke-via-http-request-subflow"/>
 	</flow>
-	<flow name="soap-invoke-subflowsFlow1" doc:id="43badb26-4134-4b49-a2fa-d18f1c582955" >
+	<flow name="soap-invoke-via-consume" doc:id="43badb26-4134-4b49-a2fa-d18f1c582955" >
 		<http:listener doc:name="/soap-via-consume" doc:id="cdcea17f-a1fe-49ad-8a3e-a57546d46ec8" config-ref="api-httpListenerConfig" path="/soap-via-consume"/>
 		<flow-ref doc:name="soap-invoke-via-consume-wsc-subflow" doc:id="fc67061f-1eea-4454-899e-8f12013547df" name="soap-invoke-via-consume-wsc-subflow"/>
 	</flow>

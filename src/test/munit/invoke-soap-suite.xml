@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="invoke-soap-suite.xml" />
+	<munit:test name="soap-invoke-via-http-test" doc:id="fc8151f2-3b57-45a8-a04a-ed4b04f5487d" >
+		<munit:behavior >
+			<munit:set-event doc:name="Set Input" doc:id="ce33dd9f-740c-4a4b-80b4-a896bcc65a41" >
+				<munit:payload value="#[output application/xml --- readUrl('classpath://soapinvokeviahttptest\set-event_payload.dwl')]" encoding="UTF-8" mediaType="application/xml" />
+				<munit:attributes value="#[readUrl('classpath://soapinvokeviahttptest\set-event_attributes.dwl')]" />
+			</munit:set-event>
+		</munit:behavior>
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to soap-invoke-via-http" doc:id="ff1c8955-21a9-40c2-92b4-029be1e59132" name="soap-invoke-via-http"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert doc:name="Assert payload" doc:id="0c7f9e80-c7c3-4805-b084-0939c7e72602" message="The payload does not match">
+				<munit-tools:that ><![CDATA[#[%dw 2.0
+import soapinvokeviahttptest::assert_expression_payload
+---
+assert_expression_payload::main({payload: payload, attributes: attributes, vars: vars})]]]></munit-tools:that>
+			</munit-tools:assert>
+		</munit:validation>
+	</munit:test>
+
+
+</mule>

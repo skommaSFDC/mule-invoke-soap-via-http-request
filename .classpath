@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="con" path="MULE_LIB/org.mule.modules/mule-soapkit-module/1.2.3"/>
-	<classpathentry kind="con" path="MULE_LIB/org.mule.connectors/mule-wsc-connector/1.6.3"/>
-	<classpathentry kind="con" path="MULE_LIB/org.mule.connectors/mule-sockets-connector/1.1.5"/>
-	<classpathentry kind="con" path="MULE_LIB/org.mule.connectors/mule-http-connector/1.5.11"/>
+	<classpathentry kind="con" path="MULE_LIB/org.mule.connectors/mule-wsc-connector/1.6.4"/>
+	<classpathentry kind="con" path="MULE_LIB/org.mule.connectors/mule-sockets-connector/1.2.1"/>
+	<classpathentry kind="con" path="MULE_LIB/org.mule.connectors/mule-http-connector/1.5.24"/>
+	<classpathentry kind="con" path="MULE_LIB/com.mulesoft.munit/munit-runner/2.3.2"/>
+	<classpathentry kind="con" path="MULE_LIB/com.mulesoft.munit/munit-tools/2.3.2"/>
 	<classpathentry exported="true" kind="con" path="MULE_RUNTIME/org.mule.tooling.server.4.2.2.ee"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="src/main/mule"/>
