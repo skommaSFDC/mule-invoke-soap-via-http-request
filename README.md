@@ -25,3 +25,5 @@ It has couple of endpoints.
 1) **/soap-via-consume** (You can invoke this to see the error you would run into with RPC-styled WSDLs. This is using Consume component.
 
 2) **/soap-via-http** (This is the one using HTTP Request)
+
+__Request XML:__ https://github.com/srkomma/mule-invoke-soap-via-http-request/blob/master/src/test/resources/request.xml
